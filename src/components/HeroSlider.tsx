@@ -35,7 +35,7 @@ const HeroSlider = () => {
       type: 'image',
       background: '/IMG_2513-slider2.jpg',
       title: 'Theme of the Year 2026: "The Year of Victory"',
-      subtitle: 'This God\'s Kairos Year for Answering Prayers',
+      subtitle: 'God\'s Kairos Moment for Answering Prayers',
       description: 'Join us for powerful sermon series on preparing to receive in God\'s overflowing provision and abundance for this year.',
       primaryCTA: {
         text: 'Watch Online',
