@@ -23,7 +23,7 @@ const LeadershipSlider = () => {
     },
     {
       id: 2,
-      name: 'Apostle Brian Ngambi & Pastor Priscilla Ngambi',
+      name: 'Bishop Brian Ngambi & Pastor Priscilla Ngambi',
       title: 'National Pastor for USA',
       image: '/Apostle-Brian-Pastor-Priscila 2.jpg',
       bio: 'Apostle Brian and Pastor Priscilla provide visionary leadership, spiritual guidance, and strategic direction across all branches in USA, overseeing the church\'s theological mission while managing large-scale operations that impact hundreds of thousands of congregants and communities nationwide in the USA.',
@@ -33,7 +33,7 @@ const LeadershipSlider = () => {
     },
     {
       id: 3,
-      name: 'Pastor Jerry Bonney',
+      name: 'Apostle Jerry Bonney',
       title: 'Associate National Pastor for USA',
       image: '/pastor-jerry 2.jpg',
       bio: 'Pastor Jerry serves as a key lieutenant to the National Pastors, providing collaborative leadership in ministry operations, strategic planning, and pastoral care while supporting the execution of the church\'s vision across multiple locations. He faithfully helps steward the complex organizational structure of the Jesus Nation Church in the USA and plays a significant role in reviewing and strengthening branches facing decline. Through prayerful assessment, pastoral guidance, and strategic support, he works to revive struggling locations and position them for renewed impact and growth in advancing the Kingdom',
