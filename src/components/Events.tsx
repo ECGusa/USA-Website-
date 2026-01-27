@@ -4,28 +4,28 @@ import { Calendar, Clock, MapPin, Users } from 'lucide-react';
 const Events = () => {
   const events = [
        {
-      title: "International Partnership Week 2025-2026",
-      date: "October 27 - November 2, 2025",
-      time: "8:00 AM - 6:00 PM CAT",
+      title: "14 Days of Prayers and Fasting",
+      date: "February 1 - 14, 2026",
+      time: "5:00 AM - 5:00 PM CAT",
       location: "Global Hybrid Event at US Branches",
-      attendees: "10K+ Expected Worldwide",
-      description: "Celebrate Global Partnership Impact."
+      attendees: "100M+ Expected Worldwide",
+      description: "Prepare for the Year 2026."
     },
     {
-      title: "Global Crossover Service 2025-2026",
-      date: "December 31, 2025",
+      title: "Major 1's Birthday Celebration",
+      date: "February 20, 2026",
       time: "8:00 PM - 1:00 AM CAT",
       location: "Malawi and Hybrid at US Branches",
       attendees: "300M+ Expected Worldwide",
-      description: "Celebrate and cross-over into a new year with the Prophet."
+      description: "Celebrating and Honoring Our Prophet."
     },
     {
-      title: "International, Asher, Napthali, Judah & Benjamin Tribes Online Summit",
-      date: "TBD",
+      title: "KFMI Birthday Retreat",
+      date: "February 20 2026",
       time: "TBD",
-      location: "TBD",
-      attendees: "1000+ Expected",
-      description: "A inspiration, empowerment, and leadership training for stewards."
+      location: "Malawi and Hybrid at US Branches ",
+      attendees: "2000+ Expected",
+      description: "Honoring the Prophet and Preparing Support Charitable Events Around the World."
     }
   ];
 
