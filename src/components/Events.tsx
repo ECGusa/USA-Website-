@@ -4,20 +4,20 @@ import { Calendar, Clock, MapPin, Users } from 'lucide-react';
 const Events = () => {
   const events = [
        {
-      title: "14 Days of Prayers and Fasting",
-      date: "February 1 - 14, 2026",
+      title: "Easter Celebrations",
+      date: "April 1 - 5, 2026",
       time: "5:00 AM - 5:00 PM CAT",
       location: "Global Hybrid Event at US Branches",
       attendees: "100M+ Expected Worldwide",
-      description: "Prepare for the Year 2026."
+      description: "Prepare for the Easter 2026."
     },
     {
-      title: "Major 1's Birthday Celebration",
-      date: "February 20, 2026",
-      time: "8:00 PM - 1:00 AM CAT",
-      location: "Malawi and Hybrid at US Branches",
-      attendees: "300M+ Expected Worldwide",
-      description: "Celebrating and Honoring Our Prophet."
+      title: "USA Annual Leadership Summit",
+      date: "May 1-3, 2026",
+      time: "8:00 AM - 10:00 PM EST",
+      location: "Washington, DC",
+      attendees: "1000+ Expected",
+      description: "A Year to Plan, Build and Multiply."
     },
     {
       title: "KFMI Birthday Retreat",
