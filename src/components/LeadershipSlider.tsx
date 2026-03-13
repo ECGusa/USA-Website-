@@ -23,7 +23,7 @@ const LeadershipSlider = () => {
     },
     {
       id: 2,
-      name: 'Bishop Brian Ngambi & Pastor Priscilla Ngambi',
+      name: 'Apostle Brian Ngambi & Pastor Priscilla Ngambi',
       title: 'National Pastor for USA',
       image: '/Apostle-Brian-Pastor-Priscila 2.jpg',
       bio: 'Apostle Brian and Pastor Priscilla provide visionary leadership, spiritual guidance, and strategic direction across all branches in USA, overseeing the church\'s theological mission while managing large-scale operations that impact hundreds of thousands of congregants and communities nationwide in the USA.',
