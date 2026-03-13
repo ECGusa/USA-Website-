@@ -20,12 +20,12 @@ const Events = () => {
       description: "A Year to Plan, Build and Multiply."
     },
     {
-      title: "KFMI Birthday Retreat",
-      date: "February 20 2026",
+      title: "Global Tribe of Judah Summit",
+      date: "March 28 2026",
       time: "TBD",
       location: "Malawi and Hybrid at US Branches ",
-      attendees: "2000+ Expected",
-      description: "Honoring the Prophet and Preparing Support Charitable Events Around the World."
+      attendees: "100M+ Expected Globally",
+      description: "Praising and Worship to Usher in Kairos Time."
     }
   ];
 
