@@ -51,7 +51,7 @@ const HeroSlider = () => {
     {
       id: 3,
       type: 'image',
-      background: '/IMG_2519-slider3.jpg',
+      background: '/Slider5.jpg',
       title: 'USA Leadership Summit',
       subtitle: 'May 1-3',
       description: ' ',
