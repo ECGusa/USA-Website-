@@ -52,9 +52,9 @@ const HeroSlider = () => {
       id: 3,
       type: 'image',
       background: '/IMG_2519-slider3.jpg',
-      title: 'Birthday Celebration of Our Prophet Major 1',
-      subtitle: 'February 20th',
-      description: 'Join us for this celebration to honor our Spiritual Father.',
+      title: 'USA Leadership Summit',
+      subtitle: 'May 1-3',
+      description: ' ',
       primaryCTA: {
         text: 'Register Now',
         icon: Users,
