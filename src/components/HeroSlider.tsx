@@ -52,7 +52,7 @@ const HeroSlider = () => {
       id: 3,
       type: 'image',
       background: '/Slider5.jpg',
-      title: 'USA Leadership Summit',
+      title: '',
       subtitle: 'May 1-3',
       description: ' ',
       primaryCTA: {
