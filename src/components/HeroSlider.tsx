@@ -52,9 +52,9 @@ const HeroSlider = () => {
       id: 3,
       type: 'image',
       background: '/Slider5v2.png',
-      title: 'Setting My Kairos Year to Plant, Build & Multiply',
+      title: 'Annual USA Leaders Retreat',
       subtitle: 'May 1-3',
-      description: 'USA Leaders Retreat ',
+      description: 'Setting My Kairos Year to Plant, Build & Multiply',
       primaryCTA: {
         text: 'Register Now',
         icon: Users,
