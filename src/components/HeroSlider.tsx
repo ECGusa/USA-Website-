@@ -51,7 +51,7 @@ const HeroSlider = () => {
     {
       id: 3,
       type: 'image',
-      background: '/Slider5.jpg',
+      background: '/Slider5v2.png',
       title: '',
       subtitle: 'May 1-3',
       description: ' ',
