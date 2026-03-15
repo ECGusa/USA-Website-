@@ -17,7 +17,7 @@ const Events = () => {
       time: "8:00 AM - 10:00 PM EST",
       location: "Washington, DC",
       attendees: "1000+ Expected",
-      description: "A Year to Plan, Build and Multiply."
+      description: "Setting My Kairos Year to Plan, Build and Multiply."
     },
     {
       title: "Global Tribe of Judah Summit",
