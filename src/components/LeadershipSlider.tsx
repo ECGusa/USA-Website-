@@ -24,7 +24,7 @@ const LeadershipSlider = () => {
     {
       id: 2,
       name: 'Apostle Brian Ngambi & Pastor Priscilla Ngambi',
-      title: 'National Pastor for USA',
+      title: 'National Apostle for USA',
       image: '/Apostle-Brian-Pastor-Priscila 2.jpg',
       bio: 'Apostle Brian and Pastor Priscilla provide visionary leadership, spiritual guidance, and strategic direction across all branches in USA, overseeing the church\'s theological mission while managing large-scale operations that impact hundreds of thousands of congregants and communities nationwide in the USA.',
       specialties: ['Leadership & Training', 'Church Growth & Strategy', 'Community Outreach'],
@@ -34,7 +34,7 @@ const LeadershipSlider = () => {
     {
       id: 3,
       name: 'Apostle Jerry Bonney',
-      title: 'Associate National Pastor for USA',
+      title: 'Deputy National Apostle for USA',
       image: '/pastor-jerry 2.jpg',
       bio: 'Pastor Jerry serves as a key lieutenant to the National Pastors, providing collaborative leadership in ministry operations, strategic planning, and pastoral care while supporting the execution of the church\'s vision across multiple locations. He faithfully helps steward the complex organizational structure of the Jesus Nation Church in the USA and plays a significant role in reviewing and strengthening branches facing decline. Through prayerful assessment, pastoral guidance, and strategic support, he works to revive struggling locations and position them for renewed impact and growth in advancing the Kingdom',
       specialties: ['Church Planting & Growth', 'Pastoral Care', 'Leadership'],
@@ -44,7 +44,7 @@ const LeadershipSlider = () => {
     {
       id: 4,
       name: 'Apostle Allan Allen',
-      title: 'Associate National Pastor for USA',
+      title: 'Second Deputy National Apostle for USA',
       image: '/Apostle-Allen 2.jpg',
       bio: 'Apostle Allan Allen serves as Associate National Pastor, carrying a divine mandate to provide visionary leadership and pastoral oversight across multiple church locations. With a heart burning for revival, he is devoted to seeing lives transformed through the power of the Gospel. His ministry inspires spiritual growth, drives evangelism, and ignites a passion for God’s presence that awakens both individuals and communities. Through a focus on church expansion, community outreach, and raising strong pastoral leaders, Apostle Allan is equipping the ECG USA network to impact generations and carry the fire of revival to the nations.',
       specialties: ['Church Planting & Growth', 'Pastoral Care', 'Spiritual Growth & Evangelism'],
