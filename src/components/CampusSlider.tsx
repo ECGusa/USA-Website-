@@ -97,12 +97,12 @@ const CampusSlider = () => {
       id: 7,
       name: 'Central Florida',
       location: 'Florida',
-      address: '750 S Orange Blossom Trl Suite 168, Orlando FL 32805',
+      address: '2300 S Orange Blossom, Orlando FL 32805',
       phone: ' +1 352-573-7757',
       image: 'https://images.pexels.com/photos/8468465/pexels-photo-8468465.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
       serviceTimes: [
-        { day: 'Sunday', time: '11:00 AM EST' },
-        { day: 'Wednesday', time: '7:00 PM EST' }
+        { day: 'Sunday', time: '12:30 PM EST' },
+        { day: 'Tuesday', time: '7:00 PM EST' }
       ],
       features: ['Main Sanctuary', 'Community Center', 'Prayer Room', 'Youth Area'],
       isMain: false
