@@ -13,7 +13,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
   title = "ECG TJNC USA Church | Enlightened Christian Gathering - The Jesus Nation Church",
   description = "ECG TJNC USA Church - Raising a people passionate about spiritual and socioeconomic transformation through the Gospel of Jesus Christ under prophetic grace and anointing.",
   keywords = "ECG TJNC USA Church, Enlightened Christian Gathering, TJNC, The Jesus Nation Church, church, prophetic ministry, Shepherd Bushiri, spiritual transformation, Gospel, Christian community",
-  image = "https://images.pexels.com/photos/8468470/pexels-photo-8468470.jpeg?auto=compress&cs=tinysrgb&w=1200&h=630&fit=crop",
+  image = "/ecg-logo.png",
   url = "https://ecgtjncusachurch.org"
 }) => {
   return (
@@ -50,7 +50,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
           "name": "ECG TJNC USA Church | Enlightened Christian Gathering - The Jesus Nation Church",
           "description": description,
           "url": url,
-          "logo": "https://images.pexels.com/photos/8468470/pexels-photo-8468470.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop",
+          "logo": "/ecg-logo.png",
           "address": {
             "@type": "PostalAddress",
             "streetAddress": "4610 69th Avenue",
