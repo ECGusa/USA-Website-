@@ -25,7 +25,7 @@ const Events = () => {
       time: "12:00PM EST",
       location: "6101 Miramar Pkwy, Miami, Fl 33023 and Hybrid Worldwide",
       attendees: "2000+ Expected Globally",
-      description: "USA KFMI Monthly Meeting Overflow& Financial Revival Summit."
+      description: "Register for USA KFMI Monthly Meeting Overflow& Financial Revival Summit."
     }
   ];
 
