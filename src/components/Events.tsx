@@ -20,12 +20,12 @@ const Events = () => {
       description: "Setting My Kairos Year to Plan, Build and Multiply."
     },
     {
-      title: "KFMI Monthly Partners Meeting Hosted by USA",
-      date: "March 28 2026",
+      title: "Global Annual Levite Summit and Iron Man Conference",
+      date: "April 3-5, 2026",
       time: "12:00PM EST",
-      location: "6101 Miramar Pkwy, Miami, Fl 33023 and Hybrid Worldwide",
-      attendees: "2000+ Expected Globally",
-      description: "Register for USA KFMI Monthly Meeting Overflow& Financial Revival Summit."
+      location: "Hybrid",
+      attendees: "10000+ Expected Globally",
+      description: "Contact your nearest branch for registration information."
     }
   ];
 
