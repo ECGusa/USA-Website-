@@ -4,18 +4,18 @@ import { Calendar, Clock, MapPin, Users } from 'lucide-react';
 const Events = () => {
   const events = [
        {
-      title: "Easter Celebrations",
-      date: "April 1 - 5, 2026",
+      title: "Women of Fire Time Out with Prophetess",
+      date: "May 27, 2026",
       time: "5:00 AM - 5:00 PM CAT",
       location: "Global Hybrid Event at US Branches",
       attendees: "100M+ Expected Worldwide",
       description: "Prepare for the Easter 2026."
     },
     {
-      title: "USA Annual Leadership Summit",
-      date: "May 1-3, 2026",
+      title: "USA National Pastors Visit - Queens",
+      date: "May 23-24, 2026",
       time: "8:00 AM - 10:00 PM EST",
-      location: "Washington, DC",
+      location: "New York",
       attendees: "1000+ Expected",
       description: "Setting My Kairos Year to Plan, Build and Multiply."
     },
