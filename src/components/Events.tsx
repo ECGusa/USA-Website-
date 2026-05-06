@@ -20,8 +20,8 @@ const Events = () => {
       description: "Setting My Kairos Year to Plan, Build and Multiply."
     },
     {
-      title: "Global Annual Levite Summit and Iron Man Conference",
-      date: "April 3-5, 2026",
+      title: "Global Annual Levite Summit",
+      date: "June 3-5, 2026",
       time: "12:00PM EST",
       location: "Hybrid",
       attendees: "10000+ Expected Globally",
