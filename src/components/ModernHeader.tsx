@@ -1,11 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Play, Calendar, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useLocation } from 'react-router-dom';
 
 const ModernHeader = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const location = useLocation();
+  const isHome = location.pathname === '/';
+
+  const resolveHref = (href: string) => {
+    if (href.startsWith('#') && !isHome) return `/${href}`;
+    return href;
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -72,7 +80,7 @@ const ModernHeader = () => {
                 onMouseLeave={() => setActiveDropdown(null)}
               >
                 <a
-                  href={item.href}
+                  href={resolveHref(item.href)}
                   target={item.href.startsWith('http') ? '_blank' : undefined}
                   rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                   className={`font-medium transition-all duration-300 flex items-center group ${
@@ -106,7 +114,7 @@ const ModernHeader = () => {
                       {item.dropdown.map((dropdownItem) => (
                         <a
                           key={dropdownItem.name}
-                          href={dropdownItem.href}
+                          href={resolveHref(dropdownItem.href)}
                           className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-900 transition-colors duration-200"
                         >
                           {dropdownItem.name}
@@ -173,7 +181,7 @@ const ModernHeader = () => {
                 {menuItems.map((item) => (
                   <div key={item.name}>
                     <a
-                      href={item.href}
+                      href={resolveHref(item.href)}
                       target={item.href.startsWith('http') ? '_blank' : undefined}
                       rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                       className="block px-4 py-3 text-white hover:bg-gray-800 hover:text-yellow-400 font-medium transition-colors duration-200"
@@ -186,7 +194,7 @@ const ModernHeader = () => {
                         {item.dropdown.map((dropdownItem) => (
                           <a
                             key={dropdownItem.name}
-                            href={dropdownItem.href}
+                            href={resolveHref(dropdownItem.href)}
                             className="block px-4 py-2 text-gray-300 hover:text-yellow-400 text-sm transition-colors duration-200"
                             onClick={() => setIsMenuOpen(false)}
                           >
