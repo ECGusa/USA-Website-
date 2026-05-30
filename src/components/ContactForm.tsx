@@ -277,11 +277,12 @@ const ContactForm = () => {
         </button>
 
         <p className="text-xs text-gray-500 leading-relaxed">
-          By submitting, you agree to receive communications from us via text and email. You can text STOP to cancel or HELP for assistance. Message and data rates may apply. Message frequency varies. Enlightened Christian Gathering <a href="https://www.visitorreach.com/privacy-policy?id=Enlightened%20Christian%20Gathering" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-700">Privacy Policy</a> &amp; <a href="https://www.visitorreach.com/terms-of-use?id=Enlightened%20Christian%20Gathering" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-700">Terms of Use</a> apply.
+         
         </p>
       </form>
     </div>
     <div data-tf-live="01KKFDFTE3FTJC5WYYJF6YPY8K"></div>
+       By submitting, you agree to receive communications from us via text and email. You can text STOP to cancel or HELP for assistance. Message and data rates may apply. Message frequency varies. Enlightened Christian Gathering <a href="https://www.visitorreach.com/privacy-policy?id=Enlightened%20Christian%20Gathering" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-700">Privacy Policy</a> &amp; <a href="https://www.visitorreach.com/terms-of-use?id=Enlightened%20Christian%20Gathering" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-700">Terms of Use</a> apply.
     </>
   );
 };
