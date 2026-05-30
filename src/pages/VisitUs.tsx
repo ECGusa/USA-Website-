@@ -63,14 +63,16 @@ const VisitUs = () => {
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-white rounded-2xl shadow-lg overflow-hidden min-h-[600px]"
+              className="flex flex-col gap-4"
             >
-              <div data-tf-live="01KKFDFTE3FTJC5WYYJF6YPY8K" style={{ width: '100%', height: '600px' }} />
-              <p className="text-xs text-gray-500 px-6 pb-6 leading-relaxed">
+              <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+                <div data-tf-live="01KKFDFTE3FTJC5WYYJF6YPY8K" style={{ width: '100%', height: '600px' }} />
+              </div>
+              <p className="text-xs text-gray-500 leading-relaxed px-1">
                 By submitting, you agree to receive communications from us via text and email. You can text STOP to cancel or HELP for assistance. Message and data rates may apply. Message frequency varies. Enlightened Christian Gathering{' '}
-                <a href="https://www.visitorreach.com/privacy-policy?id=Enlightened%20Christian%20Gathering" target="_blank" rel="noopener noreferrer" className="underline hover:text-blue-900 transition-colors">Privacy Policy</a>
+                <a href="https://www.visitorreach.com/privacy-policy?id=Enlightened%20Christian%20Gathering" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-700">Privacy Policy</a>
                 {' '}&amp;{' '}
-                <a href="https://www.visitorreach.com/terms-of-use?id=Enlightened%20Christian%20Gathering" target="_blank" rel="noopener noreferrer" className="underline hover:text-blue-900 transition-colors">Terms of Use</a>
+                <a href="https://www.visitorreach.com/terms-of-use?id=Enlightened%20Christian%20Gathering" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-700">Terms of Use</a>
                 {' '}apply.
               </p>
             </motion.div>
