@@ -66,6 +66,13 @@ const VisitUs = () => {
               className="bg-white rounded-2xl shadow-lg overflow-hidden min-h-[600px]"
             >
               <div data-tf-live="01KKFDFTE3FTJC5WYYJF6YPY8K" style={{ width: '100%', height: '600px' }} />
+              <p className="text-xs text-gray-500 px-6 pb-6 leading-relaxed">
+                By submitting, you agree to receive communications from us via text and email. You can text STOP to cancel or HELP for assistance. Message and data rates may apply. Message frequency varies. Enlightened Christian Gathering{' '}
+                <a href="https://www.visitorreach.com/privacy-policy?id=Enlightened%20Christian%20Gathering" target="_blank" rel="noopener noreferrer" className="underline hover:text-blue-900 transition-colors">Privacy Policy</a>
+                {' '}&amp;{' '}
+                <a href="https://www.visitorreach.com/terms-of-use?id=Enlightened%20Christian%20Gathering" target="_blank" rel="noopener noreferrer" className="underline hover:text-blue-900 transition-colors">Terms of Use</a>
+                {' '}apply.
+              </p>
             </motion.div>
 
             {/* Info Cards — Right */}
