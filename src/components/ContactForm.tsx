@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Send, CheckCircle, AlertCircle } from 'lucide-react';
 
 interface FormData {
@@ -17,6 +17,14 @@ interface FormErrors {
 }
 
 const ContactForm = () => {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = '//embed.typeform.com/next/embed.js';
+    script.async = true;
+    document.body.appendChild(script);
+    return () => { document.body.removeChild(script); };
+  }, []);
+
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
@@ -123,6 +131,7 @@ const ContactForm = () => {
   }
 
   return (
+    <>
     <div className="bg-white rounded-2xl p-8 shadow-lg">
       <h3 className="text-2xl font-bold text-blue-900 mb-6">Get in Touch</h3>
       
@@ -268,11 +277,12 @@ const ContactForm = () => {
         </button>
 
         <p className="text-xs text-gray-500 leading-relaxed">
-          By submitting, you agree to receive communications from us via text and email. You can text STOP to cancel or HELP for assistance. Message and data rates may apply. Message frequency varies. Enlightened Christian Gathering <ahref="https://www.visitorreach.com/privacy-policy?id=Enlightened%20Christian%20Gathering">Privacy Policy</a>a &amp; <ahref="https://www.visitorreach.com/terms-of-use?id=Enlightened%20Christian%20Gathering">Terms of Use </a>apply.
+          By submitting, you agree to receive communications from us via text and email. You can text STOP to cancel or HELP for assistance. Message and data rates may apply. Message frequency varies. Enlightened Christian Gathering <a href="https://www.visitorreach.com/privacy-policy?id=Enlightened%20Christian%20Gathering" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-700">Privacy Policy</a> &amp; <a href="https://www.visitorreach.com/terms-of-use?id=Enlightened%20Christian%20Gathering" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-700">Terms of Use</a> apply.
         </p>
       </form>
     </div>
-    <div data-tf-live="01KKFDFTE3FTJC5WYYJF6YPY8K"></div><script src="//embed.typeform.com/next/embed.js"></script>
+    <div data-tf-live="01KKFDFTE3FTJC5WYYJF6YPY8K"></div>
+    </>
   );
 };
 
