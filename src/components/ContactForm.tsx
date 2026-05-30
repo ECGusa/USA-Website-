@@ -266,6 +266,10 @@ const ContactForm = () => {
             </>
           )}
         </button>
+
+        <p className="text-xs text-gray-500 leading-relaxed">
+          By submitting, you agree to receive communications from us via text and email. You can text STOP to cancel or HELP for assistance. Message and data rates may apply. Message frequency varies. Enlightened Christian Gathering Privacy Policy &amp; Terms of Use apply.
+        </p>
       </form>
     </div>
   );
