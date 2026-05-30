@@ -32,7 +32,7 @@ const ModernHeader = () => {
     { name: 'Events', href: '#events' },
     { name: 'Give', href: 'https://www.eservicepayments.com/cgi-bin/vanco_ver3.vps?appver3=x1a8uAgje-8dTfwGAicT4jfYGSQ2YUK1meeOWlRPxdl1YzobNDOqExusiAiLTuMtBEhf8dxhk4vd5sYxhZbntY9OLO7Dg8yDfJe-osqoHKPelRMIUQO1ws0MDmjSxQn1qcPvZJD84MxDRx5JAFwT7g==' },
     {name:'Store', href:'https://propheticstore.com'},
-    { name: 'Contact', href: '#contact' }
+    { name: 'Contact', href: '/visit-us' }
   ];
 
   return (

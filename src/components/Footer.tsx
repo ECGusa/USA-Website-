@@ -1,13 +1,17 @@
 import React from 'react';
 import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Youtube } from 'lucide-react';
 import NewsletterSignup from './NewsletterSignup';
-import ContactForm from './ContactForm';
 
-const Footer = () => {
+interface FooterProps {
+  hideContact?: boolean;
+}
+
+const Footer = ({ hideContact = false }: FooterProps) => {
   return (
     <footer className="bg-blue-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Contact Section */}
+        {!hideContact && (
         <section id="contact" className="py-20">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -19,12 +23,20 @@ const Footer = () => {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <ContactForm />
-            
+            <div className="bg-white rounded-2xl p-8 shadow-lg text-blue-900">
+              <p className="text-lg font-semibold mb-4">Ready to connect with us?</p>
+              <a
+                href="/visit-us"
+                className="inline-block bg-blue-900 hover:bg-blue-800 text-white font-bold py-3 px-8 rounded-lg transition-colors"
+              >
+                Visit Us
+              </a>
+            </div>
+
             <div className="space-y-8">
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8">
                 <h3 className="text-2xl font-bold text-yellow-400 mb-6">Visit Us</h3>
-                
+
                 <div className="space-y-4">
                   <div className="flex items-start">
                     <MapPin className="text-yellow-400 mr-3 mt-1" size={20} />
@@ -32,10 +44,10 @@ const Footer = () => {
                       <p className="text-blue-100">4610 69th Avenue</p>
                       <p className="text-blue-100">Hyattsville</p>
                       <p className="text-blue-100">MD 20784, USA</p>
-                   
+
                     </div>
                   </div>
-                  
+
                   <div className="flex items-center">
                     <Phone className="text-yellow-400 mr-3" size={20} />
                     <div className="text-blue-100">
@@ -43,7 +55,7 @@ const Footer = () => {
                       <p>+1 202-253-5971</p>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-center">
                     <Mail className="text-yellow-400 mr-3" size={20} />
                     <div className="text-blue-100">
@@ -73,6 +85,7 @@ const Footer = () => {
             </div>
           </div>
         </section>
+        )}
 
         {/* Main Footer Content */}
         <div className="py-16">
@@ -110,6 +123,7 @@ const Footer = () => {
             <div>
               <h4 className="text-xl font-bold text-yellow-400 mb-6">Quick Links</h4>
               <ul className="space-y-3">
+                <li><a href="/visit-us" className="text-blue-100 hover:text-yellow-400 transition-colors">Visit Us</a></li>
                 <li><a href="#presidents-message" className="text-blue-100 hover:text-yellow-400 transition-colors">About Us</a></li>
                 <li><a href="#ministries" className="text-blue-100 hover:text-yellow-400 transition-colors">Ministries</a></li>
                 <li><a href="#events" className="text-blue-100 hover:text-yellow-400 transition-colors">Events</a></li>

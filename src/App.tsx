@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import ModernHeader from './components/ModernHeader';
 import HeroSlider from './components/HeroSlider';
@@ -15,27 +16,39 @@ import Give from './components/Give';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import SEOHead from './components/SEOHead';
+import VisitUs from './pages/VisitUs';
+
+function Home() {
+  return (
+    <div className="min-h-screen">
+      <SEOHead />
+      <ModernHeader />
+      <HeroSlider />
+      <WelcomeSection />
+      <PresidentsMessage />
+      <Mission />
+      <Ministries />
+      <Events />
+      <Testimonials />
+      <LeadershipSlider />
+      <CampusSlider />
+      <MobileAppPromo />
+      <Give />
+      <Footer />
+      <ScrollToTop />
+    </div>
+  );
+}
 
 function App() {
   return (
     <HelmetProvider>
-      <div className="min-h-screen">
-        <SEOHead />
-        <ModernHeader />
-        <HeroSlider />
-        <WelcomeSection />
-        <PresidentsMessage />
-        <Mission />
-        <Ministries />
-        <Events />
-        <Testimonials />
-        <LeadershipSlider />
-        <CampusSlider />
-        <MobileAppPromo />
-        <Give />
-        <Footer />
-        <ScrollToTop />
-      </div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/visit-us" element={<VisitUs />} />
+        </Routes>
+      </BrowserRouter>
     </HelmetProvider>
   );
 }
