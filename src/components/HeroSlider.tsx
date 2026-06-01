@@ -51,12 +51,12 @@ const HeroSlider = () => {
     {
       id: 3,
       type: 'image',
-      background: '/Slider5v3.jpg',
-      title: 'USA Leaders Retreat',
-      subtitle: 'May 1-3',
+      background: '/Slider6-JNWeek.png',
+      title: '',
+      subtitle: '',
       description: 'Setting My Kairos Year to Plant, Build & Multiply',
       primaryCTA: {
-        text: 'Register Now',
+        text: '',
         icon: Users,
         action: () => console.log('Register')
       },
