@@ -57,13 +57,13 @@ const HeroSlider = () => {
       description: '',
       primaryCTA: {
         text: '',
-        //icon: Users,
-        // action: () => console.log('Register')
+        icon: Users,
+        action: () => console.log('Register')
       },
       secondaryCTA: {
         text: '',
-        //icon: ArrowRight,
-        // action: () => console.log('Learn more')
+        icon: ArrowRight,
+        action: () => console.log('Learn more')
       }
     },
     {
