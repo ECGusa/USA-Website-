@@ -54,14 +54,14 @@ const HeroSlider = () => {
       background: '/Slider6-JNWeek.png',
       title: '',
       subtitle: '',
-      description: 'Setting My Kairos Year to Plant, Build & Multiply',
+      description: '',
       primaryCTA: {
         text: '',
         icon: Users,
         action: () => console.log('Register')
       },
       secondaryCTA: {
-        text: 'Learn More',
+        text: '',
         icon: ArrowRight,
         action: () => console.log('Learn more')
       }
