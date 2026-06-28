@@ -51,7 +51,7 @@ const HeroSlider = () => {
     {
       id: 3,
       type: 'image',
-      background: '/Slider6-JNWeek.png',
+      background: 'slider-6-DMV-Celebaration.png',
       title: '',
       subtitle: '',
       description: '',
