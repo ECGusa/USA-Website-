@@ -51,24 +51,6 @@ const HeroSlider = () => {
     {
       id: 3,
       type: 'image',
-      background: 'slider-6-DMV-Celebaration.png',
-      title: '',
-      subtitle: '',
-      description: '',
-      primaryCTA: {
-        text: '',
-        icon: Users,
-        action: () => console.log('Register')
-      },
-      secondaryCTA: {
-        text: '',
-        icon: ArrowRight,
-        action: () => console.log('Learn more')
-      }
-    },
-    {
-      id: 4,
-      type: 'image',
       background: '/IMG_2519-slider4.jpg',
       title: 'Get Connected',
       subtitle: 'Find Your Place in Our Community',
@@ -150,7 +132,7 @@ const HeroSlider = () => {
                   <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up" style={{ animationDelay: '1s' }}>
                     <button
                       onClick={() => {
-                        if (slide.id === 4) {
+                        if (slide.id === 3) {
                           const mobileAppSection = document.querySelector('section:has(h2:contains("Take The Jesus Nation Church"))') || 
                                                   document.querySelector('[class*="mobile-app"]') ||
                                                   Array.from(document.querySelectorAll('section')).find(section => 
