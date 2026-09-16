@@ -68,12 +68,10 @@ const BranchFooter: React.FC<BranchFooterProps> = ({ branch, serviceTimes }) => 
             <h4 className="text-lg font-bold text-yellow-400 mb-6">Maine Branch</h4>
             <ul className="space-y-3">
               <li><Link to={`${basePath}/about`} className="text-blue-100 hover:text-yellow-400 transition-colors">About</Link></li>
-              <li><Link to={`${basePath}/visit`} className="text-blue-100 hover:text-yellow-400 transition-colors">Plan Your Visit</Link></li>
               <li><Link to={`${basePath}/ministries`} className="text-blue-100 hover:text-yellow-400 transition-colors">Ministries</Link></li>
+              <li><Link to={`${basePath}/give`} className="text-blue-100 hover:text-yellow-400 transition-colors">Give</Link></li>
               <li><Link to={`${basePath}/events`} className="text-blue-100 hover:text-yellow-400 transition-colors">Events</Link></li>
-              <li><Link to={`${basePath}/cell-groups`} className="text-blue-100 hover:text-yellow-400 transition-colors">Cell Groups</Link></li>
-              <li><Link to={`${basePath}/watch`} className="text-blue-100 hover:text-yellow-400 transition-colors">Watch</Link></li>
-              <li><Link to={`${basePath}/prayer`} className="text-blue-100 hover:text-yellow-400 transition-colors">Prayer</Link></li>
+              <li><Link to={`${basePath}/visit`} className="text-blue-100 hover:text-yellow-400 transition-colors">Visit</Link></li>
             </ul>
           </div>
 

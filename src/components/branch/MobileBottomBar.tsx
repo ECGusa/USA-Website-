@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Home, Calendar, Heart, DollarSign, Users } from 'lucide-react';
+import { Home, Calendar, DollarSign, Users, HandHeart } from 'lucide-react';
 
 const MobileBottomBar: React.FC = () => {
   const location = useLocation();
@@ -8,10 +8,10 @@ const MobileBottomBar: React.FC = () => {
 
   const items = [
     { name: 'Home', href: basePath, icon: Home },
-    { name: 'Visit', href: `${basePath}/visit`, icon: Calendar },
+    { name: 'Ministries', href: `${basePath}/ministries`, icon: HandHeart },
     { name: 'Events', href: `${basePath}/events`, icon: Users },
-    { name: 'Prayer', href: `${basePath}/prayer`, icon: Heart },
     { name: 'Give', href: `${basePath}/give`, icon: DollarSign },
+    { name: 'Visit', href: `${basePath}/visit`, icon: Calendar },
   ];
 
   const isActive = (href: string) => {

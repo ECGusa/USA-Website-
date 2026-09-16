@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown, Calendar, Heart, DollarSign } from 'lucide-react';
+import { Menu, X, ChevronDown, Calendar } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Branch } from '../../lib/supabase';
 
@@ -12,6 +12,7 @@ const BranchHeader: React.FC<BranchHeaderProps> = ({ branch }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [mobileAboutOpen, setMobileAboutOpen] = useState(false);
   const location = useLocation();
 
   const basePath = `/maine`;
@@ -39,15 +40,10 @@ const BranchHeader: React.FC<BranchHeaderProps> = ({ branch }) => {
         { name: 'What We Believe', href: `${basePath}/about/beliefs` },
       ],
     },
-    { name: 'Plan Your Visit', href: `${basePath}/visit` },
     { name: 'Ministries', href: `${basePath}/ministries` },
-    { name: 'Cell Groups', href: `${basePath}/cell-groups` },
-    { name: 'Events', href: `${basePath}/events` },
-    { name: 'Watch & Listen', href: `${basePath}/watch` },
-    { name: 'Prayer', href: `${basePath}/prayer` },
     { name: 'Give', href: `${basePath}/give` },
-    { name: 'Get Involved', href: `${basePath}/get-involved` },
-    { name: 'Contact', href: `${basePath}/contact` },
+    { name: 'Events', href: `${basePath}/events` },
+    { name: 'Visit', href: `${basePath}/visit` },
   ];
 
   const isActive = (href: string) => {
@@ -131,28 +127,14 @@ const BranchHeader: React.FC<BranchHeaderProps> = ({ branch }) => {
             ))}
           </nav>
 
-          {/* CTA Buttons */}
-          <div className="hidden xl:flex items-center space-x-3">
+          {/* CTA Button */}
+          <div className="hidden xl:flex items-center">
             <Link
               to={`${basePath}/visit`}
-              className="bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-bold py-2 px-4 rounded-lg transition-all duration-300 flex items-center text-sm shadow-lg"
+              className="bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-bold py-2 px-5 rounded-lg transition-all duration-300 flex items-center text-sm shadow-lg"
             >
               <Calendar size={15} className="mr-1.5" />
               Plan Your Visit
-            </Link>
-            <Link
-              to={`${basePath}/prayer`}
-              className="bg-white/10 hover:bg-white/20 text-white font-bold py-2 px-4 rounded-lg transition-all duration-300 flex items-center text-sm border border-white/20"
-            >
-              <Heart size={15} className="mr-1.5" />
-              Prayer Request
-            </Link>
-            <Link
-              to={`${basePath}/give`}
-              className="bg-blue-700 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg transition-all duration-300 flex items-center text-sm"
-            >
-              <DollarSign size={15} className="mr-1.5" />
-              Give
             </Link>
           </div>
 
@@ -185,55 +167,47 @@ const BranchHeader: React.FC<BranchHeaderProps> = ({ branch }) => {
 
                 {menuItems.map((item) => (
                   <div key={item.name}>
-                    <Link
-                      to={item.href}
-                      className={`block px-4 py-2.5 font-medium transition-colors duration-200 ${
-                        isActive(item.href)
-                          ? 'text-yellow-400 bg-white/5'
-                          : 'text-white hover:bg-white/5 hover:text-yellow-400'
-                      }`}
-                    >
-                      {item.name}
-                    </Link>
-                    {item.dropdown && (
-                      <div className="pl-8 space-y-0.5">
-                        {item.dropdown.map((dropdownItem) => (
-                          <Link
-                            key={dropdownItem.name}
-                            to={dropdownItem.href}
-                            className="block px-4 py-2 text-blue-100 hover:text-yellow-400 text-sm transition-colors duration-200"
-                          >
-                            {dropdownItem.name}
-                          </Link>
-                        ))}
-                      </div>
+                    {item.dropdown ? (
+                      <>
+                        <button
+                          onClick={() => setMobileAboutOpen(!mobileAboutOpen)}
+                          className={`w-full text-left px-4 py-2.5 font-medium transition-colors duration-200 flex items-center justify-between ${
+                            isActive(item.href)
+                              ? 'text-yellow-400 bg-white/5'
+                              : 'text-white hover:bg-white/5 hover:text-yellow-400'
+                          }`}
+                        >
+                          {item.name}
+                          <ChevronDown size={16} className={`transition-transform ${mobileAboutOpen ? 'rotate-180' : ''}`} />
+                        </button>
+                        {mobileAboutOpen && (
+                          <div className="pl-8 space-y-0.5">
+                            {item.dropdown.map((dropdownItem) => (
+                              <Link
+                                key={dropdownItem.name}
+                                to={dropdownItem.href}
+                                className="block px-4 py-2 text-blue-100 hover:text-yellow-400 text-sm transition-colors duration-200"
+                              >
+                                {dropdownItem.name}
+                              </Link>
+                            ))}
+                          </div>
+                        )}
+                      </>
+                    ) : (
+                      <Link
+                        to={item.href}
+                        className={`block px-4 py-2.5 font-medium transition-colors duration-200 ${
+                          isActive(item.href)
+                            ? 'text-yellow-400 bg-white/5'
+                            : 'text-white hover:bg-white/5 hover:text-yellow-400'
+                        }`}
+                      >
+                        {item.name}
+                      </Link>
                     )}
                   </div>
                 ))}
-
-                <div className="px-4 pt-3 mt-2 border-t border-white/10 space-y-2">
-                  <Link
-                    to={`${basePath}/visit`}
-                    className="w-full bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-bold py-3 px-4 rounded-lg transition-colors flex items-center justify-center"
-                  >
-                    <Calendar size={16} className="mr-2" />
-                    Plan Your Visit
-                  </Link>
-                  <Link
-                    to={`${basePath}/prayer`}
-                    className="w-full bg-white/10 hover:bg-white/20 text-white font-bold py-3 px-4 rounded-lg transition-colors flex items-center justify-center border border-white/20"
-                  >
-                    <Heart size={16} className="mr-2" />
-                    Prayer Request
-                  </Link>
-                  <Link
-                    to={`${basePath}/give`}
-                    className="w-full bg-blue-700 hover:bg-blue-600 text-white font-bold py-3 px-4 rounded-lg transition-colors flex items-center justify-center"
-                  >
-                    <DollarSign size={16} className="mr-2" />
-                    Give
-                  </Link>
-                </div>
               </div>
             </motion.div>
           )}
