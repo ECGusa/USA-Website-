@@ -347,7 +347,9 @@ const CampusSlider = () => {
                       <div className="space-y-3">
                         <button 
                           onClick={() => {
-                            if (campus.id === 13) {
+                            if (campus.id === 3) {
+                              window.open('https://ecg-usa.org/maine', '_blank');
+                            } else if (campus.id === 13) {
                               window.open('https://jesusnationmiami.org/', '_blank');
                             }
                           }}
@@ -358,7 +360,9 @@ const CampusSlider = () => {
                         </button>
                         <button 
                           onClick={() => {
-                            if (campus.id === 13) {
+                            if (campus.id === 3) {
+                              window.open('https://ecg-usa.org/maine', '_blank');
+                            } else if (campus.id === 13) {
                               window.open('https://jesusnationmiami.org/', '_blank');
                             }
                           }}
