@@ -39,6 +39,15 @@ const tribeColors: Record<string, string> = {
   Dan: 'from-slate-600 to-slate-700',
 };
 
+const adminTeam = [
+  { name: 'Sano Masua', role: 'Administrator & Secretary' },
+  { name: 'Joyce Luka', role: 'Women on Fire' },
+  { name: 'Zereda Rasua', role: 'Youth Magnet Coordinator' },
+  { name: 'Naima Oryem', role: 'Prophetic Giants Lead' },
+  { name: 'Peninah Yarish', role: 'Medical Team Lead' },
+  { name: 'Billy Ngabire', role: 'KFMI Coordinator' },
+];
+
 const BranchAdvisoryCommittee: React.FC<BranchAdvisoryCommitteeProps> = ({ data }) => {
   const { branch } = data;
   const basePath = '/maine';
@@ -47,14 +56,14 @@ const BranchAdvisoryCommittee: React.FC<BranchAdvisoryCommitteeProps> = ({ data 
     <div className="min-h-screen bg-white pb-16 xl:pb-0">
       <BranchSEO
         branch={branch}
-        title="Advisory Committee"
-        description="Meet the Maine Branch Advisory Committee of ECG The Jesus Nation Church."
+        title="Advisory Committee & Administration"
+        description="Meet the Maine Branch Advisory Committee and Administration Team of ECG The Jesus Nation Church."
         path={`${basePath}/about/advisory-committee`}
       />
 
       <PageBanner
-        title="Maine Branch Advisory Committee"
-        subtitle="The dedicated committee members serving the Maine Branch, each representing a tribe of Israel."
+        title="Advisory Committee & Administration"
+        subtitle="Meet the dedicated committee and administration team members serving the Maine Branch."
         breadcrumbs={[
           { label: 'Home', href: basePath },
           { label: 'About', href: `${basePath}/about` },
@@ -116,14 +125,56 @@ const BranchAdvisoryCommittee: React.FC<BranchAdvisoryCommitteeProps> = ({ data 
         </div>
       </section>
 
-      {/* 12 Tribes Visual */}
+      {/* Administration Team */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <div className="w-20 h-20 mx-auto bg-gradient-to-br from-blue-700 to-blue-900 rounded-2xl flex items-center justify-center mb-6">
+              <Users className="text-yellow-400" size={36} />
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Administration Team</h2>
+            <p className="text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">
+              The dedicated team that keeps the Maine Branch running day to day, coordinating ministries, programs, and operations.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {adminTeam.map((member, index) => (
+              <motion.div
+                key={member.name + index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.08 }}
+                whileHover={{ y: -4 }}
+                className="bg-gray-50 rounded-2xl shadow-lg hover:shadow-xl transition-all overflow-hidden group border border-gray-100"
+              >
+                <div className="h-2 bg-gradient-to-r from-blue-700 to-blue-900" />
+                <div className="p-6 text-center">
+                  <div className="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-blue-700 to-blue-900 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
+                    <span className="text-white text-2xl font-bold">
+                      {member.name.split(' ').map(n => n[0]).slice(0, 2).join('')}
+                    </span>
+                  </div>
+                  <h3 className="text-lg font-bold text-blue-900 mb-2">{member.name}</h3>
+                  <span className="inline-block bg-blue-900 text-yellow-400 text-xs font-bold px-3 py-1 rounded-full">
+                    {member.role}
+                  </span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Closing Banner */}
       <section className="py-20 bg-gradient-to-br from-blue-900 to-blue-950 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <Users className="mx-auto mb-6 text-yellow-400" size={48} />
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">12 Tribes, One Mission</h2>
+          <Shield className="mx-auto mb-6 text-yellow-400" size={48} />
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Serving Together, Building Together</h2>
           <p className="text-lg text-blue-100 leading-relaxed max-w-2xl mx-auto">
-            Just as the twelve tribes of Israel came together as one nation under God, our advisory committee
-            stands united in purpose — to serve, guide, and strengthen the ECG Maine Branch for the glory of God.
+            From the twelve tribes of our advisory committee to the administration team that keeps everything running,
+            we are united in purpose — to serve, guide, and strengthen the ECG Maine Branch for the glory of God.
           </p>
         </div>
       </section>
