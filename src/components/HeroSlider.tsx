@@ -113,7 +113,7 @@ const HeroSlider = () => {
                 <div className="max-w-3xl">
                   <div className="mb-6 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
                     <span className="inline-block bg-yellow-400 text-blue-900 px-4 py-2 rounded-full text-sm font-semibold">
-                      The Jesus Nation Church USA
+                      The <span className="text-white">Jesus</span> Nation Church USA
                     </span>
                   </div>
                   

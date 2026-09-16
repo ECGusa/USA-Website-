@@ -70,7 +70,6 @@ const BranchHeader: React.FC<BranchHeaderProps> = ({ branch }) => {
               className="h-10 sm:h-12 w-auto mr-3 transition-transform group-hover:scale-105"
             />
             <div className="hidden sm:block leading-tight">
-              <div className="text-white text-sm font-semibold">ECG The Jesus Nation Church USA</div>
               <div className="text-yellow-400 text-base font-bold">{branch.state || 'Maine'} Branch</div>
             </div>
           </Link>
@@ -162,7 +161,6 @@ const BranchHeader: React.FC<BranchHeaderProps> = ({ branch }) => {
                 {/* Branch identity */}
                 <div className="px-4 pb-3 border-b border-white/10 mb-3">
                   <div className="text-yellow-400 font-bold">Maine Branch</div>
-                  <div className="text-blue-100 text-sm">ECG The Jesus Nation Church USA</div>
                 </div>
 
                 {menuItems.map((item) => (
