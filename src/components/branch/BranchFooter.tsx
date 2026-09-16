@@ -34,7 +34,9 @@ const BranchFooter: React.FC<BranchFooterProps> = ({ branch, serviceTimes }) => 
                   : 'Service time to be announced'}
               </p>
               {!isPlaceholder(branch.address) && (
-                <p className="text-blue-200 text-sm mt-1">{branch.address}</p>
+                <p className="text-blue-200 text-sm mt-1">
+                  {branch.address}{!isPlaceholder(branch.city) ? `, ${branch.city}` : ''}{!isPlaceholder(branch.state) ? `, ${branch.state}` : ''}
+                </p>
               )}
             </div>
             <Link
@@ -101,7 +103,9 @@ const BranchFooter: React.FC<BranchFooterProps> = ({ branch, serviceTimes }) => 
                 {!isPlaceholder(branch.address) && (
                   <div className="flex items-start">
                     <MapPin className="text-yellow-400 mr-2 mt-0.5" size={18} />
-                    <span className="text-blue-100 text-sm">{branch.address}</span>
+                    <span className="text-blue-100 text-sm">
+                      {branch.address}{!isPlaceholder(branch.city) ? `, ${branch.city}` : ''}{!isPlaceholder(branch.state) ? `, ${branch.state}` : ''}
+                    </span>
                   </div>
                 )}
                 {!isPlaceholder(branch.phone) && (
