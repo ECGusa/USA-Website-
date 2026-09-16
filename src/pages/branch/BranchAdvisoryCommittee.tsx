@@ -1,6 +1,22 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Shield, Users } from 'lucide-react';
+import {
+  Shield,
+  Users,
+  Music,
+  ShieldCheck,
+  Eye,
+  TrendingUp,
+  Scale,
+  HandHelping,
+  HeartHandshake,
+  ClipboardList,
+  Church,
+  Grape,
+  Wheat,
+  Crown,
+  type LucideIcon,
+} from 'lucide-react';
 import { BranchData } from '../../hooks/useBranchData';
 import BranchSEO from '../../components/branch/BranchSEO';
 import PageBanner from '../../components/branch/PageBanner';
@@ -8,6 +24,75 @@ import PageBanner from '../../components/branch/PageBanner';
 interface BranchAdvisoryCommitteeProps {
   data: BranchData;
 }
+
+interface TribeInfo {
+  icon: LucideIcon;
+  description: string;
+  colors: string;
+}
+
+const tribeInfo: Record<string, TribeInfo> = {
+  Levite: {
+    icon: Church,
+    description: 'Pastoral & Altar Services',
+    colors: 'from-blue-600 to-blue-700',
+  },
+  Benjamin: {
+    icon: HeartHandshake,
+    description: 'Counselors for New Converts',
+    colors: 'from-emerald-600 to-emerald-700',
+  },
+  Issachar: {
+    icon: HandHelping,
+    description: 'Intercessors',
+    colors: 'from-amber-600 to-amber-700',
+  },
+  Joseph: {
+    icon: Wheat,
+    description: 'Provision & Stewardship',
+    colors: 'from-sky-600 to-sky-700',
+  },
+  Gad: {
+    icon: ShieldCheck,
+    description: 'Protocols, Security & Ushers',
+    colors: 'from-teal-600 to-teal-700',
+  },
+  Naphtali: {
+    icon: Grape,
+    description: 'Hospitality & Fellowship',
+    colors: 'from-blue-700 to-blue-800',
+  },
+  Asher: {
+    icon: Crown,
+    description: 'Blessings & Welfare',
+    colors: 'from-rose-600 to-rose-700',
+  },
+  Zebulun: {
+    icon: TrendingUp,
+    description: 'Trade & Business',
+    colors: 'from-cyan-600 to-cyan-700',
+  },
+  Reuben: {
+    icon: ClipboardList,
+    description: 'Trustees & Administration',
+    colors: 'from-orange-600 to-orange-700',
+  },
+  Judah: {
+    icon: Music,
+    description: 'Worship, Media & Instruments',
+    colors: 'from-yellow-600 to-yellow-700',
+  },
+  Simeon: {
+    icon: Eye,
+    description: 'Watchmen & Prophetic Agents',
+    colors: 'from-lime-600 to-lime-700',
+  },
+  Dan: {
+    icon: Scale,
+    description: 'Legal & Safety',
+    colors: 'from-slate-600 to-slate-700',
+  },
+};
 
 const committeeMembers = [
   { tribe: 'Levite', name: 'Pastor Isaac Ogut' },
@@ -24,21 +109,6 @@ const committeeMembers = [
   { tribe: 'Dan', name: 'Sano Masua' },
 ];
 
-const tribeColors: Record<string, string> = {
-  Levite: 'from-blue-600 to-blue-700',
-  Benjamin: 'from-emerald-600 to-emerald-700',
-  Issachar: 'from-amber-600 to-amber-700',
-  Joseph: 'from-sky-600 to-sky-700',
-  Gad: 'from-teal-600 to-teal-700',
-  Naphtali: 'from-indigo-600 to-indigo-700',
-  Asher: 'from-rose-600 to-rose-700',
-  Zebulun: 'from-cyan-600 to-cyan-700',
-  Reuben: 'from-orange-600 to-orange-700',
-  Judah: 'from-yellow-600 to-yellow-700',
-  Simeon: 'from-lime-600 to-lime-700',
-  Dan: 'from-slate-600 to-slate-700',
-};
-
 const adminTeam = [
   { name: 'Sano Masua', role: 'Administrator & Secretary' },
   { name: 'Joyce Luka', role: 'Women on Fire' },
@@ -47,6 +117,12 @@ const adminTeam = [
   { name: 'Peninah Yarish', role: 'Medical Team Lead' },
   { name: 'Billy Ngabire', role: 'KFMI Coordinator' },
 ];
+
+const defaultTribe: TribeInfo = {
+  icon: Shield,
+  description: '',
+  colors: 'from-blue-600 to-blue-700',
+};
 
 const BranchAdvisoryCommittee: React.FC<BranchAdvisoryCommitteeProps> = ({ data }) => {
   const { branch } = data;
@@ -90,37 +166,38 @@ const BranchAdvisoryCommittee: React.FC<BranchAdvisoryCommitteeProps> = ({ data 
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {committeeMembers.map((member, index) => (
-              <motion.div
-                key={`${member.tribe}-${index}`}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.06 }}
-                whileHover={{ y: -4 }}
-                className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all overflow-hidden group"
-              >
-                {/* Tribe color bar */}
-                <div className={`h-2 bg-gradient-to-r ${tribeColors[member.tribe] || 'from-blue-600 to-blue-700'}`} />
+            {committeeMembers.map((member, index) => {
+              const tribe = tribeInfo[member.tribe] || defaultTribe;
+              const Icon = tribe.icon;
 
-                <div className="p-6 text-center">
-                  {/* Avatar */}
-                  <div className={`w-20 h-20 mx-auto rounded-full bg-gradient-to-br ${tribeColors[member.tribe] || 'from-blue-600 to-blue-700'} flex items-center justify-center mb-4 group-hover:scale-105 transition-transform`}>
-                    <span className="text-white text-2xl font-bold">
-                      {member.name.split(' ').map(n => n[0]).slice(0, 2).join('')}
+              return (
+                <motion.div
+                  key={`${member.tribe}-${index}`}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.06 }}
+                  whileHover={{ y: -4 }}
+                  className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all overflow-hidden group"
+                >
+                  <div className={`h-2 bg-gradient-to-r ${tribe.colors}`} />
+
+                  <div className="p-6 text-center">
+                    <div className={`w-20 h-20 mx-auto rounded-full bg-gradient-to-br ${tribe.colors} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                      <Icon className="text-white" size={32} strokeWidth={1.8} />
+                    </div>
+
+                    <h3 className="text-lg font-bold text-blue-900 mb-1">{member.name}</h3>
+
+                    <p className="text-sm text-gray-500 mb-3 leading-snug">{tribe.description}</p>
+
+                    <span className={`inline-block bg-gradient-to-r ${tribe.colors} text-white text-xs font-bold px-3 py-1 rounded-full`}>
+                      {member.tribe} Tribe
                     </span>
                   </div>
-
-                  {/* Name */}
-                  <h3 className="text-lg font-bold text-blue-900 mb-1">{member.name}</h3>
-
-                  {/* Tribe Badge */}
-                  <span className={`inline-block bg-gradient-to-r ${tribeColors[member.tribe] || 'from-blue-600 to-blue-700'} text-white text-xs font-bold px-3 py-1 rounded-full`}>
-                    {member.tribe} Tribe
-                  </span>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
