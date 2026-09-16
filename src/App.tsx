@@ -17,6 +17,7 @@ import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import SEOHead from './components/SEOHead';
 import VisitUs from './pages/VisitUs';
+import BranchLayout from './layouts/BranchLayout';
 
 function Home() {
   return (
@@ -45,8 +46,25 @@ function App() {
     <HelmetProvider>
       <BrowserRouter>
         <Routes>
+          {/* Main ECG-USA site */}
           <Route path="/" element={<Home />} />
           <Route path="/visit-us" element={<VisitUs />} />
+
+          {/* Branch sub-sites (multi-branch architecture) */}
+          <Route path="/:branchSlug" element={<BranchLayout page="home" />} />
+          <Route path="/:branchSlug/about" element={<BranchLayout page="about" />} />
+          <Route path="/:branchSlug/about/leadership" element={<BranchLayout page="leadership" />} />
+          <Route path="/:branchSlug/about/beliefs" element={<BranchLayout page="beliefs" />} />
+          <Route path="/:branchSlug/visit" element={<BranchLayout page="visit" />} />
+          <Route path="/:branchSlug/ministries" element={<BranchLayout page="ministries" />} />
+          <Route path="/:branchSlug/cell-groups" element={<BranchLayout page="cell-groups" />} />
+          <Route path="/:branchSlug/events" element={<BranchLayout page="events" />} />
+          <Route path="/:branchSlug/watch" element={<BranchLayout page="watch" />} />
+          <Route path="/:branchSlug/prayer" element={<BranchLayout page="prayer" />} />
+          <Route path="/:branchSlug/testimonies" element={<BranchLayout page="testimonies" />} />
+          <Route path="/:branchSlug/give" element={<BranchLayout page="give" />} />
+          <Route path="/:branchSlug/get-involved" element={<BranchLayout page="get-involved" />} />
+          <Route path="/:branchSlug/contact" element={<BranchLayout page="contact" />} />
         </Routes>
       </BrowserRouter>
     </HelmetProvider>

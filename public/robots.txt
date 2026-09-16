@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /maine/admin
+
+Sitemap: https://ecg-usa.org/sitemap.xml
