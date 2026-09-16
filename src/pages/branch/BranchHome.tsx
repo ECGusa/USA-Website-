@@ -162,7 +162,7 @@ const BranchHome: React.FC<BranchHomeProps> = ({ data }) => {
       </section>
 
       {/* Prayer CTA */}
-      <section className="py-20 bg-gradient-to-br from-rose-600 to-rose-800 text-white">
+      <section className="py-20 bg-gradient-to-br from-blue-800 to-blue-950 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <Heart className="mx-auto mb-6 text-yellow-400" size={48} />
           <h2 className="text-3xl md:text-4xl font-bold mb-4">We're Here to Pray With You</h2>
@@ -171,7 +171,7 @@ const BranchHome: React.FC<BranchHomeProps> = ({ data }) => {
           </p>
           <Link
             to={`${basePath}/prayer`}
-            className="inline-flex items-center bg-white hover:bg-gray-100 text-rose-700 font-bold py-4 px-8 rounded-lg transition-colors shadow-lg"
+            className="inline-flex items-center bg-white hover:bg-gray-100 text-blue-900 font-bold py-4 px-8 rounded-lg transition-colors shadow-lg"
           >
             Submit a Prayer Request
             <ArrowRight size={20} className="ml-2" />
