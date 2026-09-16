@@ -55,11 +55,21 @@ const BranchHome: React.FC<BranchHomeProps> = ({ data }) => {
                 <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-6">
                   A Word from {pastor.name}
                 </h2>
-                <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                  {pastor.biography && !pastor.biography.startsWith('[')
-                    ? pastor.biography
-                    : 'We are so glad you are here. At ECG The Jesus Nation Church Maine Branch, we believe God has a purpose and a plan for your life. Whether you are searching for a church home, looking to grow in your faith, or simply curious about who we are, we welcome you with open arms. Come as you are — you belong here.'}
-                </p>
+                <div className="space-y-4 text-gray-600 text-lg leading-relaxed mb-6">
+                  <p className="italic text-blue-900 font-medium">Dear friend,</p>
+                  <p>
+                    On behalf of our church family here in Maine, it is my joy to welcome you. Whether you've worshipped with us for years or you're simply curious and searching, I want you to know there is a place for you here — and you don't have to have it all together to belong.
+                  </p>
+                  <p>
+                    At Enlightened Christian Gathering (ECG) The Jesus Nation Church (TJNC), we are raising a people passionate about both spiritual and socioeconomic transformation through the Gospel of Jesus Christ. As the Resident Pastor, my mission is to advance the strategic vision of our father in the Lord, Prophet Shepherd Bushiri, right here in Maine, USA by carrying the mandate of this house into every community we can reach, and raising sons and daughters who will do the same. Under the prophetic grace upon his ministry, lives are being healed, homes restored, and destinies awakened. I believe yours is next.
+                  </p>
+                  <p>
+                    So come as you are. Bring your questions, your burdens, and your hopes. We come expecting God to meet us in worship, to speak through His Word, and to send us out changed — to bless our families, our workplaces, and our communities across Maine. Our doors and our hearts are open, and we would count it a privilege to walk with you.
+                  </p>
+                  <p className="font-medium text-blue-900">
+                    I look forward to meeting you in person very soon.
+                  </p>
+                </div>
                 <p className="text-blue-900 font-bold text-lg">
                   — {pastor.name}
                 </p>
