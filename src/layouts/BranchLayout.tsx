@@ -15,6 +15,7 @@ import BranchPrayer from '../pages/branch/BranchPrayer';
 import BranchGive from '../pages/branch/BranchGive';
 import BranchGetInvolved from '../pages/branch/BranchGetInvolved';
 import BranchContact from '../pages/branch/BranchContact';
+import BranchAdvisoryCommittee from '../pages/branch/BranchAdvisoryCommittee';
 
 interface BranchLayoutProps {
   page: string;
@@ -47,6 +48,7 @@ const BranchLayout: React.FC<BranchLayoutProps> = ({ page }) => {
       case 'prayer': return <BranchPrayer data={data} />;
       case 'give': return <BranchGive data={data} />;
       case 'get-involved': return <BranchGetInvolved data={data} />;
+      case 'advisory-committee': return <BranchAdvisoryCommittee data={data} />;
       case 'contact': return <BranchContact data={data} />;
       default: return <BranchHome data={data} />;
     }

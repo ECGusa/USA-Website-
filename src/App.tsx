@@ -55,6 +55,7 @@ function App() {
           <Route path="/:branchSlug/about" element={<BranchLayout page="about" />} />
           <Route path="/:branchSlug/about/leadership" element={<BranchLayout page="leadership" />} />
           <Route path="/:branchSlug/about/beliefs" element={<BranchLayout page="beliefs" />} />
+          <Route path="/:branchSlug/about/advisory-committee" element={<BranchLayout page="advisory-committee" />} />
           <Route path="/:branchSlug/visit" element={<BranchLayout page="visit" />} />
           <Route path="/:branchSlug/ministries" element={<BranchLayout page="ministries" />} />
           <Route path="/:branchSlug/prayer" element={<BranchLayout page="prayer" />} />

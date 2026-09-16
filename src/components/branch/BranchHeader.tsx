@@ -38,6 +38,7 @@ const BranchHeader: React.FC<BranchHeaderProps> = ({ branch }) => {
         { name: 'Our Story', href: `${basePath}/about` },
         { name: 'Leadership', href: `${basePath}/about/leadership` },
         { name: 'What We Believe', href: `${basePath}/about/beliefs` },
+        { name: 'Advisory Committee', href: `${basePath}/about/advisory-committee` },
       ],
     },
     { name: 'Ministries', href: `${basePath}/ministries` },
