@@ -4,28 +4,28 @@ import { Calendar, Clock, MapPin, Users } from 'lucide-react';
 const Events = () => {
   const events = [
        {
-      title: "Women of Fire Time Out with Prophetess",
-      date: "May 27, 2026",
-      time: "5:00 AM - 5:00 PM CAT",
+      title: "Maine Branch Grand Opening",
+      date: "Oct 2-4, 2026",
+      time: "5:00 AM - 5:00 PM EST",
       location: "Global Hybrid Event at US Branches",
       attendees: "100M+ Expected Worldwide",
-      description: "Prepare for the Easter 2026."
+      description: "Celebrating Growth."
     },
     {
-      title: "USA National Pastors Visit - Queens",
-      date: "May 23-24, 2026",
-      time: "8:00 AM - 10:00 PM EST",
-      location: "New York",
-      attendees: "1000+ Expected",
-      description: "Setting My Kairos Year to Plan, Build and Multiply."
+      title: "Global Salvation Festival",
+      date: "September 21-26, 2026",
+      time: "Check your nearest branch for programming",
+      location: "Hybrid Global",
+      attendees: "100M+ Expected",
+      description: "A week for evangelism celebrating salvation of souls."
     },
     {
-      title: "Global Annual Levite Summit",
-      date: "June 3-5, 2026",
-      time: "12:00PM EST",
+      title: "Parach Week",
+      date: "September 21-26, 2026",
+      time: "Check your nearest branch for programming",
       location: "Hybrid",
-      attendees: "10000+ Expected Globally",
-      description: "Contact your nearest branch for registration information."
+      attendees: "100M+ Expected Globally",
+      description: "Contact your nearest branch for additional information."
     }
   ];
 
