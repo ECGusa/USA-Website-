@@ -1,19 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
-  ArrowRight, Play, Heart, Users, Quote, Clock, Calendar,
+  ArrowRight, Play, Heart, Users, Clock,
 } from 'lucide-react';
 import { BranchData } from '../../hooks/useBranchData';
 import BranchSEO from '../../components/branch/BranchSEO';
 import BranchHero from '../../components/branch/BranchHero';
 import QuickActions from '../../components/branch/QuickActions';
 import MinistryCard from '../../components/branch/MinistryCard';
-import EventCard from '../../components/branch/EventCard';
-import SermonCard, { getYouTubeId } from '../../components/branch/SermonCard';
-import TestimonyCard from '../../components/branch/TestimonyCard';
 import LocationMap from '../../components/branch/LocationMap';
-import { Sermon } from '../../lib/supabase';
 
 interface BranchHomeProps {
   data: BranchData;
@@ -22,19 +18,10 @@ interface BranchHomeProps {
 const isPlaceholder = (val: string | null | undefined) => !val || val.startsWith('[');
 
 const BranchHome: React.FC<BranchHomeProps> = ({ data }) => {
-  const { branch, serviceTimes, leaders, ministries, events, sermons, testimonies } = data;
-  const [activeSermon, setActiveSermon] = useState<Sermon | null>(null);
+  const { branch, serviceTimes, leaders, ministries } = data;
 
   const basePath = '/maine';
   const pastor = leaders.find((l) => l.title?.toLowerCase().includes('resident pastor')) || leaders[0];
-  const upcomingEvents = events
-    .filter((e) => e.start_datetime && new Date(e.start_datetime) >= new Date(new Date().toDateString()))
-    .slice(0, 3);
-  const latestSermons = sermons.slice(0, 3);
-  const activeSermonForVideo = activeSermon || latestSermons[0];
-  const ytId = activeSermonForVideo?.video_url && !isPlaceholder(activeSermonForVideo.video_url)
-    ? getYouTubeId(activeSermonForVideo.video_url)
-    : null;
 
   return (
     <div className="min-h-screen bg-white pb-16 xl:pb-0">
@@ -44,15 +31,13 @@ const BranchHome: React.FC<BranchHomeProps> = ({ data }) => {
         description={`Welcome to ECG The Jesus Nation Church Maine Branch. Join us for worship, prayer, fellowship, teaching, and community${!isPlaceholder(branch.city) ? ` in ${branch.city}, Maine` : ''}.`}
       />
 
-      {/* 1. Header (rendered by parent layout) */}
-
-      {/* 3. Hero */}
+      {/* Hero */}
       <BranchHero branch={branch} serviceTimes={serviceTimes} />
 
-      {/* 4. Quick Actions */}
+      {/* Quick Actions */}
       <QuickActions />
 
-      {/* 6. Welcome from Resident Pastor */}
+      {/* Welcome from Resident Pastor */}
       {pastor && (
         <section className="py-20 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -106,7 +91,7 @@ const BranchHome: React.FC<BranchHomeProps> = ({ data }) => {
         </section>
       )}
 
-      {/* 7. About the Maine Branch */}
+      {/* About the Maine Branch */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -151,41 +136,8 @@ const BranchHome: React.FC<BranchHomeProps> = ({ data }) => {
         </div>
       </section>
 
-      {/* 8. Upcoming Events */}
+      {/* Ministries */}
       <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-12">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-2">Upcoming Events</h2>
-              <p className="text-gray-600 text-lg">Join us at our next gathering.</p>
-            </div>
-            <Link
-              to={`${basePath}/events`}
-              className="text-blue-700 hover:text-blue-900 font-bold flex items-center transition-colors mt-2 sm:mt-0"
-            >
-              View All Events
-              <ArrowRight size={18} className="ml-2" />
-            </Link>
-          </div>
-
-          {upcomingEvents.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {upcomingEvents.map((event, index) => (
-                <EventCard key={event.id} event={event} index={index} />
-              ))}
-            </div>
-          ) : (
-            <div className="bg-white rounded-2xl shadow-md p-12 text-center">
-              <Calendar className="mx-auto text-gray-300 mb-4" size={48} />
-              <p className="text-gray-500 text-lg">No upcoming events scheduled at this time.</p>
-              <p className="text-gray-400 text-sm mt-2">Check back soon or follow us on social media for updates.</p>
-            </div>
-          )}
-        </div>
-      </section>
-
-      {/* 9. Ministries */}
-      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-12">
             <div>
@@ -209,80 +161,7 @@ const BranchHome: React.FC<BranchHomeProps> = ({ data }) => {
         </div>
       </section>
 
-      {/* 10. Cell Groups */}
-      <section className="py-20 bg-gradient-to-br from-blue-900 to-blue-950 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Cell Groups</h2>
-            <p className="text-blue-100 text-lg max-w-2xl mx-auto">
-              Church becomes family when we do life together. Find a community near you.
-            </p>
-          </div>
-
-          <div className="text-center">
-            <Link
-              to={`${basePath}/cell-groups`}
-              className="inline-flex items-center bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-bold py-4 px-8 rounded-lg transition-colors shadow-lg"
-            >
-              Find a Cell Group
-              <ArrowRight size={20} className="ml-2" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* 11. Latest Sermon */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-12">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-2">Watch & Listen</h2>
-              <p className="text-gray-600 text-lg">Latest messages and sermons.</p>
-            </div>
-            <Link
-              to={`${basePath}/watch`}
-              className="text-blue-700 hover:text-blue-900 font-bold flex items-center transition-colors mt-2 sm:mt-0"
-            >
-              View All
-              <ArrowRight size={18} className="ml-2" />
-            </Link>
-          </div>
-
-          {latestSermons.length > 0 ? (
-            <>
-              {/* Featured video player */}
-              {ytId && (
-                <div className="mb-8 aspect-video rounded-2xl overflow-hidden shadow-xl">
-                  <iframe
-                    src={`https://www.youtube.com/embed/${ytId}`}
-                    title={activeSermonForVideo?.title}
-                    className="w-full h-full"
-                    allowFullScreen
-                  />
-                </div>
-              )}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {latestSermons.map((sermon, index) => (
-                  <SermonCard
-                    key={sermon.id}
-                    sermon={sermon}
-                    index={index}
-                    onPlay={(s) => setActiveSermon(s)}
-                  />
-                ))}
-              </div>
-            </>
-          ) : (
-            <div className="bg-white rounded-2xl shadow-md p-12 text-center">
-              <Play className="mx-auto text-gray-300 mb-4" size={48} />
-              <p className="text-gray-500 text-lg">No sermons available yet.</p>
-              <p className="text-gray-400 text-sm mt-2">Sermons will appear here once they are published.</p>
-            </div>
-          )}
-        </div>
-      </section>
-
-      {/* 12. Prayer CTA */}
+      {/* Prayer CTA */}
       <section className="py-20 bg-gradient-to-br from-rose-600 to-rose-800 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <Heart className="mx-auto mb-6 text-yellow-400" size={48} />
@@ -300,41 +179,7 @@ const BranchHome: React.FC<BranchHomeProps> = ({ data }) => {
         </div>
       </section>
 
-      {/* 13. Testimony Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <Quote className="mx-auto text-yellow-400 mb-4" size={40} />
-            <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-2">Testimonies</h2>
-            <p className="text-gray-600 text-lg">See what God has done in the lives of our members.</p>
-          </div>
-
-          {testimonies.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {testimonies.slice(0, 3).map((testimony, index) => (
-                <TestimonyCard key={testimony.id} testimony={testimony} index={index} />
-              ))}
-            </div>
-          ) : (
-            <div className="bg-gray-50 rounded-2xl p-12 text-center">
-              <p className="text-gray-500 text-lg">No testimonies published yet.</p>
-              <p className="text-gray-400 text-sm mt-2">Be the first to share what God has done!</p>
-            </div>
-          )}
-
-          <div className="text-center mt-10">
-            <Link
-              to={`${basePath}/testimonies`}
-              className="inline-flex items-center bg-blue-900 hover:bg-blue-800 text-white font-bold py-3 px-8 rounded-lg transition-colors"
-            >
-              Share Your Testimony
-              <ArrowRight size={18} className="ml-2" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* 14. Give / Partnership */}
+      {/* Give / Partnership */}
       <section className="py-20 bg-gradient-to-br from-emerald-600 to-emerald-800 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Give & Partner With Us</h2>
@@ -351,7 +196,7 @@ const BranchHome: React.FC<BranchHomeProps> = ({ data }) => {
         </div>
       </section>
 
-      {/* 15. Get Involved */}
+      {/* Get Involved */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -395,7 +240,7 @@ const BranchHome: React.FC<BranchHomeProps> = ({ data }) => {
         </div>
       </section>
 
-      {/* 16. Location / Map */}
+      {/* Location / Map */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -422,8 +267,6 @@ const BranchHome: React.FC<BranchHomeProps> = ({ data }) => {
           </div>
         </div>
       </section>
-
-      {/* 17. Final Join Us CTA (in footer) */}
     </div>
   );
 };

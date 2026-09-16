@@ -57,11 +57,7 @@ function App() {
           <Route path="/:branchSlug/about/beliefs" element={<BranchLayout page="beliefs" />} />
           <Route path="/:branchSlug/visit" element={<BranchLayout page="visit" />} />
           <Route path="/:branchSlug/ministries" element={<BranchLayout page="ministries" />} />
-          <Route path="/:branchSlug/cell-groups" element={<BranchLayout page="cell-groups" />} />
-          <Route path="/:branchSlug/events" element={<BranchLayout page="events" />} />
-          <Route path="/:branchSlug/watch" element={<BranchLayout page="watch" />} />
           <Route path="/:branchSlug/prayer" element={<BranchLayout page="prayer" />} />
-          <Route path="/:branchSlug/testimonies" element={<BranchLayout page="testimonies" />} />
           <Route path="/:branchSlug/give" element={<BranchLayout page="give" />} />
           <Route path="/:branchSlug/get-involved" element={<BranchLayout page="get-involved" />} />
           <Route path="/:branchSlug/contact" element={<BranchLayout page="contact" />} />

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Calendar, Play, Heart, DollarSign, Users, HandHeart } from 'lucide-react';
+import { Calendar, Heart, DollarSign, HandHeart } from 'lucide-react';
 
 interface QuickAction {
   title: string;
@@ -19,13 +19,6 @@ const quickActions: QuickAction[] = [
     color: 'from-blue-600 to-blue-700',
   },
   {
-    title: 'Watch & Listen',
-    description: 'Watch sermons, services, and messages.',
-    icon: Play,
-    href: '/maine/watch',
-    color: 'from-amber-500 to-amber-600',
-  },
-  {
     title: 'Prayer Request',
     description: 'Let us stand with you in prayer.',
     icon: Heart,
@@ -38,13 +31,6 @@ const quickActions: QuickAction[] = [
     icon: DollarSign,
     href: '/maine/give',
     color: 'from-emerald-500 to-emerald-600',
-  },
-  {
-    title: 'Join a Cell Group',
-    description: 'Find a community near you.',
-    icon: Users,
-    href: '/maine/cell-groups',
-    color: 'from-purple-500 to-purple-600',
   },
   {
     title: 'Get Involved',
@@ -66,7 +52,7 @@ const QuickActions: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {quickActions.map((action, index) => (
             <motion.a
               key={action.title}
