@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown, Calendar } from 'lucide-react';
+import { Menu, X, ChevronDown, Calendar, ExternalLink } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Branch } from '../../lib/supabase';
 
@@ -44,6 +44,7 @@ const BranchHeader: React.FC<BranchHeaderProps> = ({ branch }) => {
     { name: 'Ministries', href: `${basePath}/ministries` },
     { name: 'Give', href: `${basePath}/give` },
     { name: 'Visit', href: `${basePath}/visit` },
+    { name: 'National Office', href: 'https://ecg-usa.org', external: true },
   ];
 
   const isActive = (href: string) => {
@@ -83,6 +84,18 @@ const BranchHeader: React.FC<BranchHeaderProps> = ({ branch }) => {
                 onMouseEnter={() => item.dropdown && setActiveDropdown(item.name)}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
+                {item.external ? (
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-medium text-sm transition-all duration-300 flex items-center group text-white hover:text-yellow-400"
+                  >
+                    {item.name}
+                    <ExternalLink size={12} className="ml-1 opacity-60" />
+                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-400 transition-all duration-300 group-hover:w-full"></span>
+                  </a>
+                ) : (
                 <Link
                   to={item.href}
                   className={`font-medium text-sm transition-all duration-300 flex items-center group ${
@@ -100,6 +113,7 @@ const BranchHeader: React.FC<BranchHeaderProps> = ({ branch }) => {
                   )}
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-400 transition-all duration-300 group-hover:w-full"></span>
                 </Link>
+                )}
 
                 <AnimatePresence>
                   {item.dropdown && activeDropdown === item.name && (
@@ -192,6 +206,16 @@ const BranchHeader: React.FC<BranchHeaderProps> = ({ branch }) => {
                           </div>
                         )}
                       </>
+                    ) : item.external ? (
+                      <a
+                        href={item.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center px-4 py-2.5 font-medium text-white hover:bg-white/5 hover:text-yellow-400 transition-colors duration-200"
+                      >
+                        {item.name}
+                        <ExternalLink size={14} className="ml-1.5 opacity-60" />
+                      </a>
                     ) : (
                       <Link
                         to={item.href}
