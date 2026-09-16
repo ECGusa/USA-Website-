@@ -10,7 +10,7 @@ interface BranchAdvisoryCommitteeProps {
 }
 
 const committeeMembers = [
-  { tribe: 'Levite', name: 'Pastor Isaac Ogutu' },
+  { tribe: 'Levite', name: 'Pastor Isaac Ogut' },
   { tribe: 'Benjamin', name: 'Billy Ngabire' },
   { tribe: 'Issachar', name: 'Pastor Elieza Heimen' },
   { tribe: 'Joseph', name: 'Pastor John Luka' },
