@@ -53,11 +53,11 @@ const BranchFooter: React.FC<BranchFooterProps> = ({ branch, serviceTimes }) => 
       {/* Main Footer */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* ECG-USA */}
+          {/* ECG USA National Office */}
           <div>
-            <h4 className="text-lg font-bold text-yellow-400 mb-6">ECG-USA</h4>
+            <h4 className="text-lg font-bold text-yellow-400 mb-6">ECG USA National Office</h4>
             <ul className="space-y-3">
-              <li><a href="/" className="text-blue-100 hover:text-yellow-400 transition-colors">About ECG-USA</a></li>
+              <li><a href="/" className="text-blue-100 hover:text-yellow-400 transition-colors">About ECG USA</a></li>
               <li><a href="/#mission" className="text-blue-100 hover:text-yellow-400 transition-colors">Doctrine</a></li>
               <li><a href="/#leadership" className="text-blue-100 hover:text-yellow-400 transition-colors">Leadership</a></li>
               <li><a href="/#locations" className="text-blue-100 hover:text-yellow-400 transition-colors">Locations</a></li>
