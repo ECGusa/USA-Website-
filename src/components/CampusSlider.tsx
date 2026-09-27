@@ -45,8 +45,8 @@ const CampusSlider = () => {
       phone: '+1 207- 216-0219, +1 207- 245-4007',
       image: 'https://images.pexels.com/photos/8468465/pexels-photo-8468465.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
       serviceTimes: [
-        { day: 'Sunday', time: '1:00 PM EST' },
-        { day: 'Wednesday', time: '6:30 PM EST' }
+        { day: 'Sunday', time: '12:30 PM EST' },
+        { day: 'Wednesday', time: '7:00 PM EST' }
       ],
       features: ['Main Sanctuary', 'Community Center', 'Prayer Room', 'Youth Area'],
       isMain: false
