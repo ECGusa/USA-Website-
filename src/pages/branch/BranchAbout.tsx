@@ -16,7 +16,7 @@ const timeline = [
   { year: 'February 5, 2017', title: 'Ministries Launched', text: 'Worship, Youth, Children, and Prayer ministries are established to serve the congregation.' },
   { year: '[DATE]', title: 'Cell Groups Established', text: 'Home cell groups are launched across Maine for deeper fellowship and community.' },
   { year: 'March 31, 2026', title: 'Maine Branch Acquires Building', text: 'A major milestone as the Maine Branch secures its own dedicated worship space for the congregation.' },
-  { year: '[DATE]', title: 'Community Outreach Expanded', text: 'The branch expands its outreach programs, serving families and individuals in need across Maine.' },
+  { year: 'October 3, 2026', title: 'Grand Opening', text: 'The branch expands its outreach programs, serving families and individuals in need across Maine.' },
 ];
 
 const BranchAbout: React.FC<BranchAboutProps> = ({ data }) => {
