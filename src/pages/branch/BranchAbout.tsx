@@ -11,7 +11,7 @@ interface BranchAboutProps {
 }
 
 const timeline = [
-  { year: 'February 3, 2017', title: 'Maine Branch Established', text: 'ECG The Jesus Nation Church expands to Maine, bringing the Gospel to the community.' },
+  { year: 'February 3, 2017', title: 'Maine Branch Established', text: 'ECG The Jesus Nation Church expands to Maine, bringing the Gospel to the community. We believe in Jesus Christ and that God still speaks today.' },
   { year: '[DATE]', title: 'First Major Service', text: 'The Maine Branch holds its first public service, welcoming the community to worship.' },
   { year: '[DATE]', title: 'Ministries Launched', text: 'Worship, Youth, Children, and Prayer ministries are established to serve the congregation.' },
   { year: '[DATE]', title: 'Cell Groups Established', text: 'Home cell groups are launched across Maine for deeper fellowship and community.' },
