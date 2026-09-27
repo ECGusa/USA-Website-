@@ -1,6 +1,6 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Mail, Phone, Facebook, Instagram, Youtube } from 'lucide-react';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Mail, Phone, Facebook, Instagram, Youtube, ChevronDown, ChevronUp } from 'lucide-react';
 import { Leader } from '../../lib/supabase';
 
 interface LeadershipCardProps {
@@ -11,6 +11,7 @@ interface LeadershipCardProps {
 const placeholderPhoto = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOTljM2FmIiBzdHJva2Utd2lkdGg9IjEuNSI+PGNpcmNsZSBjeD0iMTIiIGN5PSI4IiByPSI0Ii8+PHBhdGggZD0iTTIwIDIxYzAtMy44NjYtMy41ODItNy04LTdzLTggMy4xMzQtOCA3Ii8+PC9zdmc+';
 
 const LeadershipCard: React.FC<LeadershipCardProps> = ({ leader, index = 0 }) => {
+  const [expanded, setExpanded] = useState(false);
   const photo = leader.photo && !leader.photo.startsWith('[') ? leader.photo : placeholderPhoto;
   const isPlaceholder = leader.name.startsWith('[');
 
@@ -53,7 +54,32 @@ const LeadershipCard: React.FC<LeadershipCardProps> = ({ leader, index = 0 }) =>
         <h3 className="text-xl font-bold text-blue-900 mb-1">{leader.name}</h3>
         <p className="text-yellow-600 font-semibold text-sm mb-3">{leader.title}</p>
         {leader.biography && !leader.biography.startsWith('[') && (
-          <p className="text-gray-600 text-sm leading-relaxed line-clamp-5 mb-4">{leader.biography}</p>
+          <div className="mb-4">
+            <AnimatePresence initial={false}>
+              <motion.div
+                key={expanded ? 'expanded' : 'collapsed'}
+                initial={{ opacity: 0.8 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.2 }}
+              >
+                <p className={`text-gray-600 text-sm leading-relaxed ${expanded ? '' : 'line-clamp-4'}`}>
+                  {leader.biography}
+                </p>
+              </motion.div>
+            </AnimatePresence>
+            {leader.biography.length > 150 && (
+              <button
+                onClick={() => setExpanded(!expanded)}
+                className="inline-flex items-center gap-1 text-blue-700 hover:text-blue-900 text-sm font-medium mt-2 transition-colors"
+              >
+                {expanded ? (
+                  <>Read Less <ChevronUp size={14} /></>
+                ) : (
+                  <>Read More <ChevronDown size={14} /></>
+                )}
+              </button>
+            )}
+          </div>
         )}
 
         {/* Contact */}
