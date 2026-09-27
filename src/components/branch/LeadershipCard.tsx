@@ -53,7 +53,7 @@ const LeadershipCard: React.FC<LeadershipCardProps> = ({ leader, index = 0 }) =>
         <h3 className="text-xl font-bold text-blue-900 mb-1">{leader.name}</h3>
         <p className="text-yellow-600 font-semibold text-sm mb-3">{leader.title}</p>
         {leader.biography && !leader.biography.startsWith('[') && (
-          <p className="text-gray-600 text-sm leading-relaxed line-clamp-3 mb-4">{leader.biography}</p>
+          <p className="text-gray-600 text-sm leading-relaxed line-clamp-5 mb-4">{leader.biography}</p>
         )}
 
         {/* Contact */}
